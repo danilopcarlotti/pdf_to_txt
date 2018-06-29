@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/debugger-app-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/fontbox-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/pdfbox-app-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/pdfbox-debugger-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/pdfbox-tools-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/preflight-app-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/danilo/Documents/pdf_to_txt/Jar/xmpbox-2.0.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

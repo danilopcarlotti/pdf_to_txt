@@ -20,9 +20,9 @@ public class pdf2txtMain {
 				String childname = child.getName();
 				Matcher matcher = pattern.matcher(childname);
 				if (matcher.find()) {
-					FileWriter arq = new FileWriter(matcher.group(1) + "txt");
+					FileWriter arq = new FileWriter(path.path+"/"+matcher.group(1) + "txt");
 					PrintWriter gravarArq = new PrintWriter(arq);
-					pdfManager.setFilePath(childname);
+					pdfManager.setFilePath(path.path+"/"+childname);
 					pdfManager.ToText(gravarArq);
 					arq.close();
 					System.out.println("erros encontrados com ");

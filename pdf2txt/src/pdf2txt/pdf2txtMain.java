@@ -21,12 +21,11 @@ public class pdf2txtMain {
 				Matcher matcher = pattern.matcher(childname);
 				if (matcher.find()) {
 					FileWriter arq = new FileWriter(path.path+"/"+matcher.group(1) + "txt");
-					PrintWriter gravarArq = new PrintWriter(arq);
+					PrintWriter writePDF = new PrintWriter(arq);
 					pdfManager.setFilePath(path.path+"/"+childname);
-					pdfManager.ToText(gravarArq);
+					pdfManager.ToText(writePDF);
 					arq.close();
-					System.out.println("erros encontrados com ");
-					System.out.println(child);
+					System.out.println("Errors found with " + childname);
 				}
 			}
 		} else {

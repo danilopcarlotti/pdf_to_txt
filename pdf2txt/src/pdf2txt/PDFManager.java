@@ -19,38 +19,38 @@ public class PDFManager {
 	private String filePath;
 	private File file;
 	public int aux;
-	public int erros;
+	public int errors;
 
 	public PDFManager() {
 
 	}
 
-	public void ToText(PrintWriter gravarArq) throws IOException {
+	public void ToText(PrintWriter writePDF) throws IOException {
 		this.pdfStripper = null;
 		this.pdDoc = null;
 		this.cosDoc = null;
 		file = new File(this.filePath);
-		parser = new PDFParser(new RandomAccessFile(file, "r")); // Só funciona com a biblioteca pdfbox V 2.0
+		parser = new PDFParser(new RandomAccessFile(file, "r"));
 		parser.parse();
 		cosDoc = parser.getDocument();
 		pdfStripper = new PDFTextStripper();
 		pdDoc = new PDDocument(cosDoc);
 		pdDoc.getNumberOfPages();
 		aux = 1;
-		erros = 0;
+		errors = 0;
 		while (aux <= pdDoc.getNumberOfPages()) {
 			pdfStripper.setStartPage(aux);
 			pdfStripper.setEndPage(aux + 1);
 			try {
-				gravarArq.printf(pdfStripper.getText(pdDoc));
+				writePDF.printf(pdfStripper.getText(pdDoc));
 			} catch (Exception e) {
-				erros += 1;
+				errors += 1;
 			} catch (Throwable e) {
-				erros += 1;
+				errors += 1;
 			}
 			aux += 2;
 		}
-		System.out.println(String.valueOf(erros));
+		System.out.println(String.valueOf(errors));
 	}
 
 	public void setFilePath(String filePath) {

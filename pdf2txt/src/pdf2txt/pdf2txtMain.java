@@ -17,6 +17,20 @@ public class pdf2txtMain {
 		Pattern pattern = Pattern.compile("(.+)pdf$");
 		if (directoryListing != null) {
 			for (File child : directoryListing) {
+				if (child.isDirectory()) {
+					for (File grandchild : child.listFiles()) {
+						String childname = grandchild.getName();
+						Matcher matcher = pattern.matcher(childname);
+						if (matcher.find()) {
+							FileWriter arq = new FileWriter(path.path+"/"+child.getName()+"/"+matcher.group(1) + "txt");
+							PrintWriter writePDF = new PrintWriter(arq);
+							pdfManager.setFilePath(path.path+"/"+child.getName()+"/"+childname);
+							pdfManager.ToText(writePDF);
+							arq.close();
+//							System.out.println("Errors found with " + childname);
+						}
+					}
+				}
 				String childname = child.getName();
 				Matcher matcher = pattern.matcher(childname);
 				if (matcher.find()) {
@@ -25,7 +39,7 @@ public class pdf2txtMain {
 					pdfManager.setFilePath(path.path+"/"+childname);
 					pdfManager.ToText(writePDF);
 					arq.close();
-					System.out.println("Errors found with " + childname);
+//					System.out.println("Errors found with " + childname);
 				}
 			}
 		} else {

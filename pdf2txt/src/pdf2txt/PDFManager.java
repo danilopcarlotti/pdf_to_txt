@@ -24,7 +24,7 @@ public class PDFManager {
 	public PDFManager() {
 
 	}
-
+	
 	public void ToText(PrintWriter writePDF) throws IOException {
 		this.pdfStripper = null;
 		this.pdDoc = null;
@@ -50,7 +50,7 @@ public class PDFManager {
 			}
 			aux += 2;
 		}
-		System.out.println(String.valueOf(errors));
+//		System.out.println(String.valueOf(errors));
 	}
 
 	public void setFilePath(String filePath) {
